@@ -1,0 +1,69 @@
+/* ~/.config/rofi/topbar.rasi */
+
+configuration {
+    font: "JetBrainsMono Nerd Font Regular 10";
+    show-icons: false;
+}
+
+* {
+    /* Colors from your dmenu script */
+    bg:      #1d2021;
+    fg:      #859289;
+    sel-bg:  #a7c080;
+    sel-fg:  #1d2021;
+
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+window {
+    location: north;
+    anchor:   north;
+    y-offset: 10px;
+    width:    calc(100% - 20px);
+    height:   36px;
+    children: [ horibox ];
+    border:   0px;
+}
+
+horibox {
+    orientation: horizontal;
+    children:    [ prompt, entry, listview ];
+}
+
+prompt {
+    padding:    9px 12px;
+    text-color: @sel-bg; /* Using the green for the prompt to make it pop */
+}
+
+entry {
+    padding: 9px 0px;
+    expand:  false;
+    width:   12em;
+}
+
+listview {
+    layout:  horizontal;
+    spacing: 5px;
+    lines:   100; /* Allows as many items as can fit on the screen */
+}
+
+element {
+    padding:            9px 12px;
+    spacing:            0px;
+    border:             0px;        /* Removes the border from all items */
+    background-color:   transparent;
+}
+
+element selected {
+    background-color:   @sel-bg;    /* Your green color (#a7c080) */
+    text-color:         @sel-fg;    /* Your dark color (#1d2021) */
+    border:             0px;        /* Ensures no border appears when selected */
+    border-radius:      0px;        /* Keeps it a sharp rectangle */
+}
+
+/* This ensures the text inside the element doesn't have its own background */
+element-text {
+    background-color:   inherit;
+    text-color:         inherit;
+}

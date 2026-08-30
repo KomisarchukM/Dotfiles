@@ -1,0 +1,30 @@
+copy{
+  "languageserver": {},
+
+  // clangd for C++
+  "clangd.path": "clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--header-insertion=iwyu"
+  ],
+
+  // Auto-install CoC extensions on first launch
+  "coc.preferences.extensionUpdateCheck": "daily",
+
+  // Diagnostics appearance
+  "diagnostic.errorSign": "✘",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "ℹ",
+
+  // Completion
+  "suggest.enablePreview": true,
+  "suggest.noselect": true,
+  "suggest.completionItemKindLabels": {},
+
+  // Format on save for C/C++
+  "coc.preferences.formatOnSaveFiletypes": [
+    "c", "cpp", "h", "hpp"
+  ]
+}
